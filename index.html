@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="pt-BR">
   <head>
@@ -11,10 +10,11 @@
       content="NOOON — ecossistema financeiro com presença: mais que pagamento, parceiro de negócios."
     />
 
-    <!-- Icons (public/assets) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <!-- FAVICONS (public/assets) -->
+    <!-- IMPORTANTE: sem barra inicial para funcionar no GitHub Pages -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
     <meta name="theme-color" content="#0B140D" />
 
     <!-- Open Graph -->
@@ -23,10 +23,10 @@
       property="og:description"
       content="Ecossistema financeiro com presença: mais que pagamento, parceiro de negócios."
     />
-    <meta property="og:image" content="/nooon_V3/assets/og-1200x630.png" />
+    <meta property="og:image" content="assets/og-1200x630.png" />
     <meta property="og:type" content="website" />
 
-    <!-- Fonts (Preset A — Tech Orgânico) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,6 +37,8 @@
 
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- IMPORTANTE: também sem barra inicial -->
+    <script type="module" src="src/main.jsx"></script>
   </body>
 </html>
