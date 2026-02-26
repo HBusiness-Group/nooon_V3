@@ -220,7 +220,7 @@ function Navbar() {
           </a>
 
           <MagneticButton href="#parceiro" tone="neon" className="text-xs md:text-sm">
-            Começar minha rede <ArrowRight size={16} />
+            Começar minha rede
           </MagneticButton>
         </div>
       </div>
@@ -316,7 +316,7 @@ function Hero() {
 
             <div data-hero className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
               <MagneticButton href="#parceiro" tone="neon" className="w-full sm:w-auto">
-                Começar minha rede <ArrowRight size={16} />
+                Começar minha rede
               </MagneticButton>
 
               <MagneticButton
@@ -326,7 +326,7 @@ function Hero() {
                 rel="noreferrer"
                 className="w-full sm:w-auto"
               >
-                Falar no WhatsApp <MessageCircle size={16} />
+                Falar no WhatsApp
               </MagneticButton>
 
               <a
@@ -493,10 +493,10 @@ function Ecosystem() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <MagneticButton href={LINKS.portal} tone="neon" target="_blank" rel="noreferrer">
-            Acessar Portal <ExternalLink size={16} />
+            Acessar Portal
           </MagneticButton>
           <MagneticButton href="#parceiro" tone="ghost">
-            Iniciar como parceiro <ChevronRight size={16} />
+            Iniciar como parceiro
           </MagneticButton>
         </div>
 
@@ -551,7 +551,7 @@ function SuperSocio() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <MagneticButton href={LINKS.supersocio} tone="ghost" target="_blank" rel="noreferrer">
-            Conhecer SuperSócio <ExternalLink size={16} />
+            Conhecer SuperSócio
           </MagneticButton>
           <div className="font-mono text-[11px]" style={{ color: "rgba(242,245,239,.62)" }}>
             integração: NOOON (infraestrutura) + SuperSócio (crescimento)
@@ -642,7 +642,7 @@ function PartnerForm() {
 
               <div className="pt-3 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <MagneticButton tone="neon" className="w-full sm:w-auto">
-                  Enviar e falar no WhatsApp <ArrowRight size={16} />
+                  Enviar e falar no WhatsApp
                 </MagneticButton>
 
                 <a
