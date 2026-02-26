@@ -147,16 +147,12 @@ function Navbar() {
           boxShadow: solid ? "0 18px 60px rgba(0,0,0,.12)" : "0 18px 70px rgba(0,0,0,.0)",
         }}
       >
-        <div className="flex items-center gap-3">
-          <div
-            className="grid h-9 w-9 place-items-center rounded-[999px]"
-            style={{
-              background: solid ? "rgba(46,100,23,.10)" : "rgba(242,245,239,.10)",
-              border: solid ? "1px solid rgba(46,100,23,.18)" : "1px solid rgba(242,245,239,.14)",
-            }}
-            aria-hidden="true"
-          >
-            <Network size={18} style={{ color: solid ? TOKENS.palette.primary : TOKENS.palette.paper }} />
+          <div className="flex items-center">
+            <img
+              src="/assets/nooon_1-1.png"
+              alt="NOOON"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </div>
 
           <div className="leading-tight">
