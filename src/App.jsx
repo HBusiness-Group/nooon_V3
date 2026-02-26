@@ -219,7 +219,7 @@ function Navbar() {
             Portal <ExternalLink size={14} />
           </a>
 
-          <MagneticButton href="#parceiro" tone="neon" className="text-xs md:text-sm">
+          <MagneticButton href="#parceiro" tone="neon" className="w-full sm:w-auto">
             Começar minha rede <ArrowRight size={16} />
           </MagneticButton>
         </div>
