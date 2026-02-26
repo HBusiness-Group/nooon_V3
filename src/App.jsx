@@ -235,7 +235,7 @@ function Hero() {
 
   // Imagens ousadas (pode trocar depois por assets NOOON)
   const heroImg =
-    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2400&q=80"; // matriz/código
+    "/assets/nooon-hero.png"; // matriz/código
   const textureImg =
     "https://images.unsplash.com/photo-1528813860492-bb99459ec095?auto=format&fit=crop&w=2400&q=80"; // textura orgânica
 
