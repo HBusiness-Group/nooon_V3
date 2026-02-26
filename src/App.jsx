@@ -164,12 +164,6 @@ function Navbar() {
       >
         {/* Brand */}
         <a href="#hero" className="flex items-center gap-3">
-          <img
-            src="assets/nooon_0.png"
-            alt="NOOON"
-            className="h-10 md:h-12 w-auto object-contain"
-            loading="eager"
-          />        
           <div className="leading-tight">
             <div
               className="font-heading text-sm font-semibold tracking-tight md:text-[15px]"
