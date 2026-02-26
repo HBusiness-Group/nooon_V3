@@ -8,6 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 const LINKS = {
   portal: "https://portal.nooon.com.br",
   supersocio: "https://supersocio.com.br",
+  instagram: "https://instagram.com/nooon.pagamentos",
+  hbusiness: "https://hbusiness-group.com.br",
   whatsapp: "https://wa.me/5584987885959",
   whatsappPrefill: (data) => {
     const msg =
@@ -787,58 +789,163 @@ function FloatingWhatsApp() {
 /* ---------------- Footer ---------------- */
 function Footer() {
   return (
-    <footer className="rounded-t-[4rem] px-5 py-16 md:px-10 lg:px-14" style={{ background: TOKENS.palette.deep, color: TOKENS.palette.paper }}>
+    <footer
+      className="rounded-t-[4rem] px-5 py-16 md:px-10 lg:px-14"
+      style={{ background: TOKENS.palette.deep, color: TOKENS.palette.paper }}
+    >
       <div className="mx-auto max-w-[1100px]">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
+          
+          {/* Marca */}
           <div className="md:col-span-2">
-            <div className="font-heading text-2xl font-semibold tracking-[-0.04em]">{TOKENS.brand}</div>
-            <p className="mt-3 max-w-[560px] text-sm leading-relaxed" style={{ color: "rgba(242,245,239,.78)" }}>
-              Ecossistema financeiro com rede de parceiros. Para quem quer construir renda recorrente com infraestrutura e método.
+            <div className="font-heading text-2xl font-semibold tracking-[-0.04em]">
+              {TOKENS.brand}
+            </div>
+
+            <p
+              className="mt-3 max-w-[560px] text-sm leading-relaxed"
+              style={{ color: "rgba(242,245,239,.78)" }}
+            >
+              Ecossistema financeiro focado em expansão de rede e geração de
+              renda recorrente. Infraestrutura sólida para parceiros independentes.
             </p>
 
-            <div className="mt-6 inline-flex items-center gap-3 round-premium px-4 py-3" style={{ background: "rgba(242,245,239,.06)", border: "1px solid rgba(242,245,239,.12)" }}>
-              <span className="pulse-dot inline-block h-2.5 w-2.5 rounded-[999px]" style={{ background: "#2ECC71" }} />
-              <span className="font-mono text-[11px]" style={{ color: "rgba(242,245,239,.78)" }}>
+            {/* Status */}
+            <div
+              className="mt-6 inline-flex items-center gap-3 round-premium px-4 py-3"
+              style={{
+                background: "rgba(242,245,239,.06)",
+                border: "1px solid rgba(242,245,239,.12)",
+              }}
+            >
+              <span
+                className="pulse-dot inline-block h-2.5 w-2.5 rounded-[999px]"
+                style={{ background: "#2ECC71" }}
+              />
+              <span
+                className="font-mono text-[11px]"
+                style={{ color: "rgba(242,245,239,.78)" }}
+              >
                 Sistema Operacional: ONLINE
               </span>
             </div>
           </div>
 
+          {/* Links */}
           <div>
-            <div className="font-mono text-xs tracking-[0.18em]" style={{ color: "rgba(242,245,239,.62)" }}>
+            <div
+              className="font-mono text-xs tracking-[0.18em]"
+              style={{ color: "rgba(242,245,239,.62)" }}
+            >
               LINKS
             </div>
-            <div className="mt-4 space-y-2">
-              <a href={LINKS.portal} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
+
+            <div className="mt-4 space-y-3">
+              <a
+                href="https://portal.nooon.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className="mag block text-sm font-medium"
+                style={{ color: "rgba(242,245,239,.82)" }}
+              >
                 Portal NOOON
               </a>
-              <a href={LINKS.supersocio} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
+
+              <a
+                href="https://supersocio.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className="mag block text-sm font-medium"
+                style={{ color: "rgba(242,245,239,.82)" }}
+              >
                 SuperSócio
               </a>
-              <a href={LINKS.whatsapp} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
-                WhatsApp
+
+              <a
+                href="https://instagram.com/nooon.pagamentos"
+                target="_blank"
+                rel="noreferrer"
+                className="mag block text-sm font-medium"
+                style={{ color: "rgba(242,245,239,.82)" }}
+              >
+                Instagram @nooon.pagamentos
+              </a>
+
+              <a
+                href="https://hbusiness-group.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className="mag block text-sm font-medium"
+                style={{ color: "rgba(242,245,239,.82)" }}
+              >
+                HBusiness Group
               </a>
             </div>
           </div>
 
+          {/* Contato */}
           <div>
-            <div className="font-mono text-xs tracking-[0.18em]" style={{ color: "rgba(242,245,239,.62)" }}>
-              NAVEGAÇÃO
+            <div
+              className="font-mono text-xs tracking-[0.18em]"
+              style={{ color: "rgba(242,245,239,.62)" }}
+            >
+              CONTATO
             </div>
-            <div className="mt-4 space-y-2">
-              {TOKENS.nav.map((n) => (
-                <a key={n.id} href={`#${n.id}`} className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
-                  {n.label}
-                </a>
-              ))}
+
+            <div className="mt-4 space-y-3">
+              <a
+                href="mailto:contato@nooon.com.br"
+                className="mag block font-mono text-sm"
+                style={{ color: TOKENS.palette.neon }}
+              >
+                contato@nooon.com.br
+              </a>
+
+              <a
+                href="mailto:comercial@nooon.com.br"
+                className="mag block font-mono text-sm"
+                style={{ color: TOKENS.palette.neon }}
+              >
+                comercial@nooon.com.br
+              </a>
+
+              <a
+                href="mailto:suporte@nooon.com.br"
+                className="mag block font-mono text-sm"
+                style={{ color: TOKENS.palette.neon }}
+              >
+                suporte@nooon.com.br
+              </a>
+
+              <a
+                href="https://wa.me/5584987885959"
+                target="_blank"
+                rel="noreferrer"
+                className="mag block font-mono text-sm"
+                style={{ color: TOKENS.palette.neon }}
+              >
+                WhatsApp (84) 98788-5959
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 h-[1px]" style={{ background: "rgba(242,245,239,.10)" }} />
-        <div className="mt-6 flex flex-col gap-2 text-xs md:flex-row md:items-center md:justify-between" style={{ color: "rgba(242,245,239,.62)" }}>
-          <div className="font-mono">© {new Date().getFullYear()} {TOKENS.brand}. Rede em movimento.</div>
-          <div className="font-mono">V3 • Parceiro Independente</div>
+        <div
+          className="mt-12 h-[1px]"
+          style={{ background: "rgba(242,245,239,.10)" }}
+        />
+
+        <div
+          className="mt-6 flex flex-col gap-2 text-xs md:flex-row md:items-center md:justify-between"
+          style={{ color: "rgba(242,245,239,.62)" }}
+        >
+          <div className="font-mono">
+            © {new Date().getFullYear()} NOOON • Ecossistema Financeiro
+          </div>
+
+          <div className="font-mono">
+            Desenvolvido por HBusiness Group
+          </div>
         </div>
       </div>
     </footer>
