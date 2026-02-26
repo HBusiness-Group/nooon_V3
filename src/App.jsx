@@ -621,7 +621,7 @@ function PartnerForm() {
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div className="round-hero soft-shadow p-8" style={{ background: "#FFFFFF", border: "1px solid rgba(14,15,16,.12)" }}>
             <form onSubmit={onSubmit} className="space-y-4">
-              <Field label="Seu nome" value={form.nome} onChange={onChange("nome")} placeholder="Ex: Harley" />
+              <Field label="Seu nome" value={form.nome} onChange={onChange("nome")} placeholder="Ex: Joaquim Silva" />
               <Field label="Cidade / UF" value={form.cidade} onChange={onChange("cidade")} placeholder="Ex: Natal/RN" />
               <Field label="Seu WhatsApp" value={form.whats} onChange={onChange("whats")} placeholder="Ex: (84) 98788-5959" />
 
