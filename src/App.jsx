@@ -249,10 +249,10 @@ function Hero() {
     return () => ctx.revert();
   }, [reduced]);
 
-  // ✅ Hero com imagem oficial NOOON (sem pessoas)
-  const heroImg = asset("nooon-hero.png");
-  // ✅ Textura opcional (mantém o visual premium). Se quiser, trocamos depois por outra do NOOON.
-  const textureImg = asset("nooon-hero.png");
+  // ✅ Hero com imagem oficial NOOON
+  const heroImg = asset("nooon_hero.png");
+  // ✅ Textura estilo Matrix
+  const textureImg = asset("nooon_paper.png");
 
   return (
     <section id="hero" ref={root} className="relative min-h-[100dvh] overflow-hidden">
