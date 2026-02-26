@@ -252,7 +252,7 @@ function Hero() {
   // ✅ Hero com imagem oficial NOOON (sem pessoas)
   const heroImg = asset("nooon-hero.png");
   // ✅ Textura opcional (mantém o visual premium). Se quiser, trocamos depois por outra do NOOON.
-  const textureImg = asset("nooon-hero.png");
+  const textureImg = asset("nooon-paper.png");
 
   return (
     <section id="hero" ref={root} className="relative min-h-[100dvh] overflow-hidden">
