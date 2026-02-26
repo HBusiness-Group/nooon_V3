@@ -1,3 +1,4 @@
+const asset = (file) => `${import.meta.env.BASE_URL}assets/${file}`;
 import React, { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -249,9 +250,9 @@ function Hero() {
   }, [reduced]);
 
   // ✅ Hero com imagem oficial NOOON (sem pessoas)
-  const heroImg = "/assets/nooon-hero.png";
+  const heroImg = asset("nooon-hero.png");
   // ✅ Textura opcional (mantém o visual premium). Se quiser, trocamos depois por outra do NOOON.
-  const textureImg = "/assets/nooon-hero.png";
+  const textureImg = asset("nooon-hero.png");
 
   return (
     <section id="hero" ref={root} className="relative min-h-[100dvh] overflow-hidden">
