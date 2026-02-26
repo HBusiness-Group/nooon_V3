@@ -1,5 +1,15 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight, ChevronRight, Sparkles, ShieldCheck, Network, Wallet, Users, MessageCircle, ExternalLink } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  ArrowRight,
+  ChevronRight,
+  Sparkles,
+  ShieldCheck,
+  Network,
+  Wallet,
+  Users,
+  MessageCircle,
+  ExternalLink,
+} from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,8 +22,7 @@ const LINKS = {
   hbusiness: "https://hbusiness-group.com.br",
   whatsapp: "https://wa.me/5584987885959",
   whatsappPrefill: (data) => {
-    const msg =
-`Olá! Quero iniciar minha rede NOOON e ativar meus primeiros pontos.
+    const msg = `Olá! Quero iniciar minha rede NOOON e ativar meus primeiros pontos.
 
 Nome: ${data.nome || "-"}
 Cidade/UF: ${data.cidade || "-"}
@@ -60,29 +69,36 @@ function useReducedMotion() {
   return reduced;
 }
 
-function MagneticButton({ children, className, href, onClick, tone = "neon" }) {
+function MagneticButton({ children, className, href, onClick, tone = "neon", ...props }) {
   const isLink = !!href;
   const Comp = isLink ? "a" : "button";
 
   const bg =
-    tone === "neon" ? TOKENS.palette.neon :
-    tone === "primary" ? TOKENS.palette.primary :
-    "rgba(242,245,239,.10)";
+    tone === "neon"
+      ? TOKENS.palette.neon
+      : tone === "primary"
+        ? TOKENS.palette.primary
+        : "rgba(242,245,239,.10)";
 
   const fg =
-    tone === "ghost" ? "rgba(242,245,239,.90)" :
-    tone === "primary" ? TOKENS.palette.paper :
-    TOKENS.palette.ink;
+    tone === "ghost"
+      ? "rgba(242,245,239,.90)"
+      : tone === "primary"
+        ? TOKENS.palette.paper
+        : TOKENS.palette.ink;
 
   const border =
-    tone === "ghost" ? "1px solid rgba(242,245,239,.16)" :
-    tone === "primary" ? "1px solid rgba(255,255,255,.14)" :
-    "1px solid rgba(0,0,0,.10)";
+    tone === "ghost"
+      ? "1px solid rgba(242,245,239,.16)"
+      : tone === "primary"
+        ? "1px solid rgba(255,255,255,.14)"
+        : "1px solid rgba(0,0,0,.10)";
 
   return (
     <Comp
       href={href}
       onClick={onClick}
+      {...props}
       className={cn(
         "btn-sweep mag inline-flex items-center justify-center gap-2 rounded-[999px] px-5 py-3 text-sm font-semibold tracking-tight soft-shadow",
         "focus:outline-none focus:ring-2 focus:ring-offset-2",
@@ -122,10 +138,7 @@ function Navbar() {
     if (!hero) return;
 
     const io = new IntersectionObserver(
-      (entries) => {
-        const e = entries[0];
-        setSolid(!e.isIntersecting);
-      },
+      (entries) => setSolid(!entries[0].isIntersecting),
       { threshold: 0.1 }
     );
 
@@ -143,18 +156,19 @@ function Navbar() {
         )}
         style={{
           background: solid ? "rgba(242,245,239,.72)" : "transparent",
-          border: solid ? "1px solid rgba(46,100,23,.16)" : "1px solid rgba(242,245,239,.14)",
+          border: solid
+            ? "1px solid rgba(46,100,23,.16)"
+            : "1px solid rgba(242,245,239,.14)",
           boxShadow: solid ? "0 18px 60px rgba(0,0,0,.12)" : "0 18px 70px rgba(0,0,0,.0)",
         }}
       >
-          <div className="flex items-center">
-            <img
-              src="/assets/nooon_1-1.png"
-              alt="NOOON"
-              className="h-10 md:h-12 w-auto object-contain"
-            />
-          </div>
-
+        {/* Brand */}
+        <a href="#hero" className="flex items-center gap-3">
+          <img
+            src="/assets/nooon_1-1.png"
+            alt="NOOON"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
           <div className="leading-tight">
             <div
               className="font-heading text-sm font-semibold tracking-tight md:text-[15px]"
@@ -169,8 +183,9 @@ function Navbar() {
               rede de renda recorrente
             </div>
           </div>
-        </div>
+        </a>
 
+        {/* Nav */}
         <div className="hidden items-center gap-6 md:flex">
           {TOKENS.nav.map((n) => (
             <a
@@ -184,12 +199,15 @@ function Navbar() {
           ))}
         </div>
 
+        {/* Actions */}
         <div className="flex items-center gap-2">
           <a
             href={LINKS.portal}
             target="_blank"
             rel="noreferrer"
-            className={cn("mag hidden rounded-[999px] px-3 py-2 text-xs font-semibold md:inline-flex items-center gap-2")}
+            className={cn(
+              "mag hidden rounded-[999px] px-3 py-2 text-xs font-semibold md:inline-flex items-center gap-2"
+            )}
             style={{
               background: solid ? "rgba(46,100,23,.08)" : "rgba(242,245,239,.10)",
               border: solid ? "1px solid rgba(46,100,23,.16)" : "1px solid rgba(242,245,239,.14)",
@@ -229,16 +247,15 @@ function Hero() {
     return () => ctx.revert();
   }, [reduced]);
 
-  // Imagens ousadas (pode trocar depois por assets NOOON)
-  const heroImg =
-    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2400&q=80"; // matriz/código
-  const textureImg =
-    "/assets/nooon-hero.png"; // textura orgânica
+  // ✅ Hero com imagem oficial NOOON (sem pessoas)
+  const heroImg = "/assets/nooon-hero.png";
+  // ✅ Textura opcional (mantém o visual premium). Se quiser, trocamos depois por outra do NOOON.
+  const textureImg = "/assets/nooon-hero.png";
 
   return (
     <section id="hero" ref={root} className="relative min-h-[100dvh] overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Tecnologia em movimento" className="h-full w-full object-cover" />
+        <img src={heroImg} alt="NOOON" className="h-full w-full object-cover" />
         <div
           className="absolute inset-0"
           style={{
@@ -249,8 +266,8 @@ function Hero() {
             `,
           }}
         />
-        <div className="absolute inset-0 opacity-[0.12]">
-          <img src={textureImg} alt="Textura orgânica" className="h-full w-full object-cover" />
+        <div className="absolute inset-0 opacity-[0.10]">
+          <img src={textureImg} alt="" className="h-full w-full object-cover" />
         </div>
       </div>
 
@@ -582,11 +599,7 @@ function PartnerForm() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    // 1) Confirmação local (sem backend)
     setSent(true);
-
-    // 2) Abre WhatsApp com mensagem pré-preenchida (opção de conversão imediata)
     window.open(LINKS.whatsappPrefill(form), "_blank", "noopener,noreferrer");
   };
 
@@ -604,10 +617,7 @@ function PartnerForm() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <div
-            className="round-hero soft-shadow p-8"
-            style={{ background: "#FFFFFF", border: "1px solid rgba(14,15,16,.12)" }}
-          >
+          <div className="round-hero soft-shadow p-8" style={{ background: "#FFFFFF", border: "1px solid rgba(14,15,16,.12)" }}>
             <form onSubmit={onSubmit} className="space-y-4">
               <Field label="Seu nome" value={form.nome} onChange={onChange("nome")} placeholder="Ex: Harley" />
               <Field label="Cidade / UF" value={form.cidade} onChange={onChange("cidade")} placeholder="Ex: Natal/RN" />
@@ -649,8 +659,13 @@ function PartnerForm() {
               </div>
 
               {sent && (
-                <div className="round-premium mt-4 p-4 font-mono text-[12px]"
-                  style={{ background: "rgba(116,204,0,.12)", border: "1px solid rgba(116,204,0,.22)", color: TOKENS.palette.ink }}
+                <div
+                  className="round-premium mt-4 p-4 font-mono text-[12px]"
+                  style={{
+                    background: "rgba(116,204,0,.12)",
+                    border: "1px solid rgba(116,204,0,.22)",
+                    color: TOKENS.palette.ink,
+                  }}
                 >
                   Enviado ✅ Abrimos seu WhatsApp com a mensagem pronta. Se não abriu, clique em “Só WhatsApp”.
                 </div>
@@ -726,7 +741,9 @@ function PartnerForm() {
 function Field({ label, value, onChange, placeholder }) {
   return (
     <label className="block">
-      <div className="font-mono text-[11px]" style={{ color: "rgba(14,15,16,.60)" }}>{label}</div>
+      <div className="font-mono text-[11px]" style={{ color: "rgba(14,15,16,.60)" }}>
+        {label}
+      </div>
       <input
         value={value}
         onChange={onChange}
@@ -744,7 +761,9 @@ function Field({ label, value, onChange, placeholder }) {
 function Select({ label, value, onChange, options }) {
   return (
     <label className="block">
-      <div className="font-mono text-[11px]" style={{ color: "rgba(14,15,16,.60)" }}>{label}</div>
+      <div className="font-mono text-[11px]" style={{ color: "rgba(14,15,16,.60)" }}>
+        {label}
+      </div>
       <select
         value={value}
         onChange={onChange}
@@ -754,7 +773,11 @@ function Select({ label, value, onChange, options }) {
           border: "1px solid rgba(14,15,16,.14)",
         }}
       >
-        {options.map((o) => <option key={o} value={o}>{o}</option>)}
+        {options.map((o) => (
+          <option key={o} value={o}>
+            {o}
+          </option>
+        ))}
       </select>
     </label>
   );
@@ -785,43 +808,20 @@ function FloatingWhatsApp() {
 /* ---------------- Footer ---------------- */
 function Footer() {
   return (
-    <footer
-      className="rounded-t-[4rem] px-5 py-16 md:px-10 lg:px-14"
-      style={{ background: TOKENS.palette.deep, color: TOKENS.palette.paper }}
-    >
+    <footer className="rounded-t-[4rem] px-5 py-16 md:px-10 lg:px-14" style={{ background: TOKENS.palette.deep, color: TOKENS.palette.paper }}>
       <div className="mx-auto max-w-[1100px]">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
-          
           {/* Marca */}
           <div className="md:col-span-2">
-            <div className="font-heading text-2xl font-semibold tracking-[-0.04em]">
-              {TOKENS.brand}
-            </div>
+            <div className="font-heading text-2xl font-semibold tracking-[-0.04em]">{TOKENS.brand}</div>
 
-            <p
-              className="mt-3 max-w-[560px] text-sm leading-relaxed"
-              style={{ color: "rgba(242,245,239,.78)" }}
-            >
-              Ecossistema financeiro focado em expansão de rede e geração de
-              renda recorrente. Infraestrutura sólida para parceiros independentes.
+            <p className="mt-3 max-w-[560px] text-sm leading-relaxed" style={{ color: "rgba(242,245,239,.78)" }}>
+              Ecossistema financeiro focado em expansão de rede e geração de renda recorrente. Infraestrutura sólida para parceiros independentes.
             </p>
 
-            {/* Status */}
-            <div
-              className="mt-6 inline-flex items-center gap-3 round-premium px-4 py-3"
-              style={{
-                background: "rgba(242,245,239,.06)",
-                border: "1px solid rgba(242,245,239,.12)",
-              }}
-            >
-              <span
-                className="pulse-dot inline-block h-2.5 w-2.5 rounded-[999px]"
-                style={{ background: "#2ECC71" }}
-              />
-              <span
-                className="font-mono text-[11px]"
-                style={{ color: "rgba(242,245,239,.78)" }}
-              >
+            <div className="mt-6 inline-flex items-center gap-3 round-premium px-4 py-3" style={{ background: "rgba(242,245,239,.06)", border: "1px solid rgba(242,245,239,.12)" }}>
+              <span className="pulse-dot inline-block h-2.5 w-2.5 rounded-[999px]" style={{ background: "#2ECC71" }} />
+              <span className="font-mono text-[11px]" style={{ color: "rgba(242,245,239,.78)" }}>
                 Sistema Operacional: ONLINE
               </span>
             </div>
@@ -829,51 +829,21 @@ function Footer() {
 
           {/* Links */}
           <div>
-            <div
-              className="font-mono text-xs tracking-[0.18em]"
-              style={{ color: "rgba(242,245,239,.62)" }}
-            >
+            <div className="font-mono text-xs tracking-[0.18em]" style={{ color: "rgba(242,245,239,.62)" }}>
               LINKS
             </div>
 
             <div className="mt-4 space-y-3">
-              <a
-                href="https://portal.nooon.com.br"
-                target="_blank"
-                rel="noreferrer"
-                className="mag block text-sm font-medium"
-                style={{ color: "rgba(242,245,239,.82)" }}
-              >
+              <a href={LINKS.portal} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
                 Portal NOOON
               </a>
-
-              <a
-                href="https://supersocio.com.br"
-                target="_blank"
-                rel="noreferrer"
-                className="mag block text-sm font-medium"
-                style={{ color: "rgba(242,245,239,.82)" }}
-              >
+              <a href={LINKS.supersocio} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
                 SuperSócio
               </a>
-
-              <a
-                href="https://instagram.com/nooon.pagamentos"
-                target="_blank"
-                rel="noreferrer"
-                className="mag block text-sm font-medium"
-                style={{ color: "rgba(242,245,239,.82)" }}
-              >
+              <a href={LINKS.instagram} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
                 Instagram @nooon.pagamentos
               </a>
-
-              <a
-                href="https://hbusiness-group.com.br"
-                target="_blank"
-                rel="noreferrer"
-                className="mag block text-sm font-medium"
-                style={{ color: "rgba(242,245,239,.82)" }}
-              >
+              <a href={LINKS.hbusiness} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
                 HBusiness Group
               </a>
             </div>
@@ -881,67 +851,32 @@ function Footer() {
 
           {/* Contato */}
           <div>
-            <div
-              className="font-mono text-xs tracking-[0.18em]"
-              style={{ color: "rgba(242,245,239,.62)" }}
-            >
+            <div className="font-mono text-xs tracking-[0.18em]" style={{ color: "rgba(242,245,239,.62)" }}>
               CONTATO
             </div>
 
             <div className="mt-4 space-y-3">
-              <a
-                href="mailto:contato@nooon.com.br"
-                className="mag block font-mono text-sm"
-                style={{ color: TOKENS.palette.neon }}
-              >
+              <a href="mailto:contato@nooon.com.br" className="mag block font-mono text-sm" style={{ color: TOKENS.palette.neon }}>
                 contato@nooon.com.br
               </a>
-
-              <a
-                href="mailto:comercial@nooon.com.br"
-                className="mag block font-mono text-sm"
-                style={{ color: TOKENS.palette.neon }}
-              >
+              <a href="mailto:comercial@nooon.com.br" className="mag block font-mono text-sm" style={{ color: TOKENS.palette.neon }}>
                 comercial@nooon.com.br
               </a>
-
-              <a
-                href="mailto:suporte@nooon.com.br"
-                className="mag block font-mono text-sm"
-                style={{ color: TOKENS.palette.neon }}
-              >
+              <a href="mailto:suporte@nooon.com.br" className="mag block font-mono text-sm" style={{ color: TOKENS.palette.neon }}>
                 suporte@nooon.com.br
               </a>
-
-              <a
-                href="https://wa.me/5584987885959"
-                target="_blank"
-                rel="noreferrer"
-                className="mag block font-mono text-sm"
-                style={{ color: TOKENS.palette.neon }}
-              >
+              <a href={LINKS.whatsapp} target="_blank" rel="noreferrer" className="mag block font-mono text-sm" style={{ color: TOKENS.palette.neon }}>
                 WhatsApp (84) 98788-5959
               </a>
             </div>
           </div>
         </div>
 
-        <div
-          className="mt-12 h-[1px]"
-          style={{ background: "rgba(242,245,239,.10)" }}
-        />
+        <div className="mt-12 h-[1px]" style={{ background: "rgba(242,245,239,.10)" }} />
 
-        <div
-          className="mt-6 flex flex-col gap-2 text-xs md:flex-row md:items-center md:justify-between"
-          style={{ color: "rgba(242,245,239,.62)" }}
-        >
-          <div className="font-mono">
-            © {new Date().getFullYear()} NOOON • Ecossistema Financeiro
-          </div>
-
-          <div className="font-mono">
-            Desenvolvido por HBusiness Group
-          </div>
+        <div className="mt-6 flex flex-col gap-2 text-xs md:flex-row md:items-center md:justify-between" style={{ color: "rgba(242,245,239,.62)" }}>
+          <div className="font-mono">© {new Date().getFullYear()} NOOON • Ecossistema Financeiro</div>
+          <div className="font-mono">Desenvolvido por HBusiness Group</div>
         </div>
       </div>
     </footer>
