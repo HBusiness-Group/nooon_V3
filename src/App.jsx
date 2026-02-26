@@ -250,7 +250,7 @@ function Hero() {
   }, [reduced]);
 
   // ✅ Hero com imagem oficial NOOON (sem pessoas)
-  const heroImg = asset("nooon-paper.png");
+  const heroImg = asset("nooon-hero.png");
   // ✅ Textura opcional (mantém o visual premium). Se quiser, trocamos depois por outra do NOOON.
   const textureImg = asset("nooon-paper.png");
 
