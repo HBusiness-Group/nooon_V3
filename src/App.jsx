@@ -327,7 +327,7 @@ function Hero() {
                 className="w-full sm:w-auto"
               >
                 Falar no WhatsApp
-              </MagneticButton>
+              
 
               <a
                 href={LINKS.portal}
@@ -494,9 +494,9 @@ function Ecosystem() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <MagneticButton href={LINKS.portal} tone="neon" target="_blank" rel="noreferrer">
             Acessar Portal
-          </MagneticButton>
+          
           <MagneticButton href="#parceiro" tone="ghost">
-            Iniciar como parceiro <ChevronRight size={16} />
+            Iniciar como parceiro
           </MagneticButton>
         </div>
 
