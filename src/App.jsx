@@ -220,7 +220,7 @@ function Navbar() {
           </a>
 
           <MagneticButton href="#parceiro" tone="neon" className="text-xs md:text-sm">
-            Começar minha rede size={16} />
+            Começar minha rede <size={16} />
           </MagneticButton>
         </div>
       </div>
@@ -316,7 +316,7 @@ function Hero() {
 
             <div data-hero className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
               <MagneticButton href="#parceiro" tone="neon" className="w-full sm:w-auto">
-                Começar minha rede size={16} />
+                Começar minha rede <size={16} />
               </MagneticButton>
 
               <MagneticButton
