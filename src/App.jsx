@@ -219,9 +219,9 @@ function Navbar() {
             Portal <ExternalLink size={14} />
           </a>
 
-          <MagneticButton href="#parceiro" tone="neon" className="w-full sm:w-auto">
-            Começar minha rede
-          
+          <MagneticButton href="#parceiro" tone="neon" className="text-xs md:text-sm">
+            Começar minha rede <ArrowRight size={16} />
+          </MagneticButton>
         </div>
       </div>
     </div>
@@ -249,7 +249,7 @@ function Hero() {
     return () => ctx.revert();
   }, [reduced]);
 
-  // ✅ Hero com imagem oficial NOOON
+  // ✅ Hero com imagem em branco
   const heroImg = asset("nooon_hero.png");
   // ✅ Textura estilo Matrix
   const textureImg = asset("nooon_paper.png");
@@ -316,8 +316,8 @@ function Hero() {
 
             <div data-hero className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
               <MagneticButton href="#parceiro" tone="neon" className="w-full sm:w-auto">
-                Começar minha rede
-              
+                Começar minha rede <ArrowRight size={16} />
+              </MagneticButton>
 
               <MagneticButton
                 href={LINKS.whatsapp}
@@ -326,8 +326,8 @@ function Hero() {
                 rel="noreferrer"
                 className="w-full sm:w-auto"
               >
-                Falar no WhatsApp
-              
+                Falar no WhatsApp <MessageCircle size={16} />
+              </MagneticButton>
 
               <a
                 href={LINKS.portal}
@@ -493,10 +493,10 @@ function Ecosystem() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <MagneticButton href={LINKS.portal} tone="neon" target="_blank" rel="noreferrer">
-            Acessar Portal
-          
+            Acessar Portal <ExternalLink size={16} />
+          </MagneticButton>
           <MagneticButton href="#parceiro" tone="ghost">
-            Iniciar como parceiro
+            Iniciar como parceiro <ChevronRight size={16} />
           </MagneticButton>
         </div>
 
@@ -551,7 +551,7 @@ function SuperSocio() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <MagneticButton href={LINKS.supersocio} tone="ghost" target="_blank" rel="noreferrer">
-            Conhecer SuperSócio
+            Conhecer SuperSócio <ExternalLink size={16} />
           </MagneticButton>
           <div className="font-mono text-[11px]" style={{ color: "rgba(242,245,239,.62)" }}>
             integração: NOOON (infraestrutura) + SuperSócio (crescimento)
@@ -642,7 +642,7 @@ function PartnerForm() {
 
               <div className="pt-3 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <MagneticButton tone="neon" className="w-full sm:w-auto">
-                  Enviar e falar no WhatsApp
+                  Enviar e falar no WhatsApp <ArrowRight size={16} />
                 </MagneticButton>
 
                 <a
