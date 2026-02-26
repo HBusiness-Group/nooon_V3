@@ -3,23 +3,25 @@
 @tailwind utilities;
 
 :root{
-  --moss:#2E4036;
-  --clay:#CC5833;
-  --cream:#F2F0E9;
-  --char:#1A1A1A;
+  /* NOOON */
+  --nooon-deep:#0B140D;   /* fundo profundo */
+  --nooon-green:#2e6417;  /* primária */
+  --nooon-neon:#74cc00;   /* destaque */
+  --nooon-ink:#0E0F10;    /* texto escuro */
+  --nooon-paper:#F2F5EF;  /* claro/creme frio */
 }
 
 html, body { height: 100%; }
 body{
-  background: var(--cream);
-  color: var(--char);
+  background: var(--nooon-paper);
+  color: var(--nooon-ink);
   font-family: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   text-rendering: geometricPrecision;
 }
 
-::selection{ background: rgba(204,88,51,.22); }
+::selection{ background: rgba(116,204,0,.25); }
 
-/* Global Noise Overlay (fixed + subtle) */
+/* Global Noise Overlay */
 .noise-overlay{
   pointer-events:none;
   position:fixed;
@@ -31,12 +33,12 @@ body{
   background-size: 180px 180px;
 }
 
-/* Font utility classes */
+/* Fonts */
 .font-heading{ font-family:"Outfit", system-ui, sans-serif; }
 .font-drama{ font-family:"Cormorant Garamond", serif; }
 .font-mono{ font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace; }
 
-/* Radius system (premium) */
+/* Radius system */
 .round-premium{ border-radius: 2.75rem; }
 .round-hero{ border-radius: 3rem; }
 
@@ -47,11 +49,7 @@ body{
 }
 .mag:hover{ transform: translateY(-1px) scale(1.03); }
 
-.btn-sweep{
-  position: relative;
-  overflow: hidden;
-  transform: translateZ(0);
-}
+.btn-sweep{ position: relative; overflow: hidden; transform: translateZ(0); }
 .btn-sweep > span.sweep{
   position:absolute; inset:0;
   transform: translateX(-110%);
@@ -61,13 +59,10 @@ body{
 
 .soft-shadow{
   box-shadow:
-    0 18px 60px rgba(0,0,0,.10),
+    0 18px 60px rgba(0,0,0,.12),
     0 2px 0 rgba(255,255,255,.35) inset;
 }
-
-.hairline{
-  border: 1px solid rgba(26,26,26,.12);
-}
+.hairline{ border: 1px solid rgba(14,15,16,.12); }
 
 @keyframes blink{ 50%{ opacity:0; } }
 .cursor-blink{ animation: blink 1s steps(2,end) infinite; }
