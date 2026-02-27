@@ -148,19 +148,21 @@ function Navbar() {
   }, []);
 
   return (
-    <div className="fixed inset-x-0 top-4 z-40 flex justify-center px-3">
+    <div className="fixed inset-x-0 z-40 flex justify-center px-3" style={{ top: "calc(env(safe-area-inset-top, 0px) + 12px)" }}>
       <div
         className={cn(
           "round-premium flex w-full max-w-[1100px] items-center justify-between gap-3 px-4 py-3 md:px-6",
           "transition-all duration-500",
-          solid ? "backdrop-blur-xl" : "bg-transparent"
+          "backdrop-blur-xl"
         )}
         style={{
-          background: solid ? "rgba(242,245,239,.72)" : "transparent",
+          background: solid ? "rgba(242,245,239,.82)" : "rgba(11,20,13,.38)",
           border: solid
-            ? "1px solid rgba(46,100,23,.16)"
-            : "1px solid rgba(242,245,239,.14)",
-          boxShadow: solid ? "0 18px 60px rgba(0,0,0,.12)" : "0 18px 70px rgba(0,0,0,.0)",
+            ? "1px solid rgba(46,100,23,.18)"
+            : "1px solid rgba(242,245,239,.16)",
+          boxShadow: solid ? "0 18px 60px rgba(0,0,0,.12)" : "0 18px 70px rgba(0,0,0,.22)",
+          WebkitBackdropFilter: "blur(18px) saturate(160%)",
+          backdropFilter: "blur(18px) saturate(160%)",
         }}
       >
         {/* Brand */}
@@ -287,7 +289,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative z-[1] flex min-h-[100dvh] items-end">
+      <div className="relative z-[1] flex min-h-[100dvh] items-end pt-[104px] md:pt-[28px]">
         <div className="w-full px-5 pb-16 md:px-10 md:pb-20 lg:px-14">
           <div className="max-w-[980px]">
             <div
