@@ -204,6 +204,20 @@ function Navbar() {
         {/* Actions */}
         <div className="flex items-center gap-2">
           <a
+            href="equipamentos.html"
+            className={cn(
+              "mag hidden rounded-[999px] px-3 py-2 text-xs font-semibold md:inline-flex items-center gap-2"
+            )}
+            style={{
+              background: solid ? "rgba(46,100,23,.08)" : "rgba(242,245,239,.10)",
+              border: solid ? "1px solid rgba(46,100,23,.16)" : "1px solid rgba(242,245,239,.14)",
+              color: solid ? TOKENS.palette.primary : TOKENS.palette.paper,
+            }}
+          >
+            Equipamentos <ChevronRight size={14} />
+          </a>
+
+          <a
             href={LINKS.portal}
             target="_blank"
             rel="noreferrer"
