@@ -93,16 +93,18 @@ function MagneticButton({ children, className, href, tone = "neon", ...props }) 
 
 function Topbar() {
   return (
-    <div className="fixed inset-x-0 top-4 z-40 flex justify-center px-3">
+    <div className="fixed inset-x-0 z-40 flex justify-center px-3" style={{ top: "calc(env(safe-area-inset-top, 0px) + 12px)" }}>
       <div
         className={cn(
           "round-premium flex w-full max-w-[1100px] items-center justify-between gap-3 px-4 py-3 md:px-6",
           "backdrop-blur-xl"
         )}
         style={{
-          background: "rgba(242,245,239,.78)",
-          border: "1px solid rgba(46,100,23,.16)",
-          boxShadow: "0 18px 60px rgba(0,0,0,.12)",
+          background: "rgba(242,245,239,.84)",
+          WebkitBackdropFilter: "blur(18px) saturate(160%)",
+          backdropFilter: "blur(18px) saturate(160%)",
+          border: "1px solid rgba(46,100,23,.18)",
+          boxShadow: "0 18px 60px rgba(0,0,0,.14)",
         }}
       >
         <a href={LINKS.home} className="mag inline-flex items-center gap-2 text-sm font-semibold">
@@ -128,7 +130,7 @@ function Topbar() {
           className={cn("mag hidden rounded-[999px] px-3 py-2 text-xs font-semibold md:inline-flex items-center gap-2")}
           style={{
             background: "rgba(46,100,23,.08)",
-            border: "1px solid rgba(46,100,23,.16)",
+            border: "1px solid rgba(46,100,23,.18)",
             color: TOKENS.palette.primary,
           }}
         >
@@ -380,7 +382,7 @@ function EquipamentosApp() {
               className="round-hero p-7 md:p-10"
               style={{
                 background: "rgba(46,100,23,.08)",
-                border: "1px solid rgba(46,100,23,.16)",
+                border: "1px solid rgba(46,100,23,.18)",
                 boxShadow: "0 18px 70px rgba(0,0,0,.10)",
               }}
             >
