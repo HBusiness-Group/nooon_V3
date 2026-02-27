@@ -226,7 +226,7 @@ function Navbar() {
             className="px-4 py-2 text-xs md:text-sm md:px-5 md:py-2.5"
             aria-label="Abrir Portal NOOON"
           >
-            Portal <ExternalLink size={14} />
+            Portal
           </MagneticButton>
         </div>
       </div>
@@ -726,7 +726,7 @@ function PartnerForm() {
                 className="mag inline-flex items-center gap-2 font-mono text-[12px]"
                 style={{ color: "rgba(242,245,239,.78)" }}
               >
-                Já é cliente? Acessar Portal <ExternalLink size={14} />
+                Já é cliente? Acessar Portal
               </a>
 
               <a
