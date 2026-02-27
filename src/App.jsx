@@ -205,11 +205,10 @@ function Navbar() {
 
         {/* Actions */}
         <div className="flex items-center gap-2">
+          {/* Mobile + Desktop: manter dois botões acessíveis */}
           <a
             href="equipamentos.html"
-            className={cn(
-              "mag hidden rounded-[999px] px-3 py-2 text-xs font-semibold md:inline-flex items-center gap-2"
-            )}
+            className={cn("mag inline-flex items-center gap-2 rounded-[999px] px-3 py-2 text-xs font-semibold md:px-4 md:py-2.5")}
             style={{
               background: solid ? "rgba(46,100,23,.08)" : "rgba(242,245,239,.10)",
               border: solid ? "1px solid rgba(46,100,23,.16)" : "1px solid rgba(242,245,239,.14)",
@@ -219,24 +218,15 @@ function Navbar() {
             Equipamentos <ChevronRight size={14} />
           </a>
 
-          <a
+          <MagneticButton
             href={LINKS.portal}
             target="_blank"
             rel="noreferrer"
-            className={cn(
-              "mag hidden rounded-[999px] px-3 py-2 text-xs font-semibold md:inline-flex items-center gap-2"
-            )}
-            style={{
-              background: solid ? "rgba(46,100,23,.08)" : "rgba(242,245,239,.10)",
-              border: solid ? "1px solid rgba(46,100,23,.16)" : "1px solid rgba(242,245,239,.14)",
-              color: solid ? TOKENS.palette.primary : TOKENS.palette.paper,
-            }}
+            tone="neon"
+            className="px-4 py-2 text-xs md:text-sm md:px-5 md:py-2.5"
+            aria-label="Abrir Portal NOOON"
           >
             Portal <ExternalLink size={14} />
-          </a>
-
-          <MagneticButton href="#parceiro" tone="neon" className="text-xs md:text-sm">
-            Começar minha rede
           </MagneticButton>
         </div>
       </div>
