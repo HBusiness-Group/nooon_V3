@@ -127,11 +127,11 @@ function Topbar() {
           href={LINKS.portal}
           target="_blank"
           rel="noreferrer"
-          className={cn("mag hidden rounded-[999px] px-3 py-2 text-xs font-semibold md:inline-flex items-center gap-2")}
+          className={cn("mag inline-flex items-center gap-2 rounded-[999px] px-3 py-2 text-xs font-semibold md:px-4 md:py-2.5")}
           style={{
-            background: "rgba(46,100,23,.08)",
-            border: "1px solid rgba(46,100,23,.18)",
-            color: TOKENS.palette.primary,
+            background: TOKENS.palette.neon,
+            border: "1px solid rgba(0,0,0,.10)",
+            color: TOKENS.palette.ink,
           }}
         >
           Portal <ExternalLink size={14} />
