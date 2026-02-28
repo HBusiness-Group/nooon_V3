@@ -18,8 +18,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const LINKS = {
   portal: "https://portal.nooon.com.br",
-  supersocio: "https://supersocio.com.br",
   instagram: "https://instagram.com/nooon.pagamentos",
+  supersocio: "https://supersocio.com.br",
   hbusiness: "https://hbusiness-group.com.br",
   whatsapp: "https://wa.me/5584987885959",
   whatsappPrefill: (data) => {
@@ -226,7 +226,7 @@ function Navbar() {
             className="px-4 py-2 text-xs md:text-sm md:px-5 md:py-2.5"
             aria-label="Abrir Portal NOOON"
           >
-            Portal <ExternalLink size={12} />
+            Portal NOOON
           </MagneticButton>
         </div>
       </div>
@@ -346,7 +346,7 @@ function Hero() {
                   color: "rgba(242,245,239,.88)",
                 }}
               >
-                Portal <ExternalLink size={12} />
+                Portal NOOON
               </a>
             </div>
 
@@ -499,7 +499,7 @@ function Ecosystem() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <MagneticButton href={LINKS.portal} tone="neon" target="_blank" rel="noreferrer">
-            Acessar Portal
+            Acessar Portal NOOON
           </MagneticButton>
           <MagneticButton href="#parceiro" tone="ghost">
             Iniciar como parceiro
@@ -726,7 +726,7 @@ function PartnerForm() {
                 className="mag inline-flex items-center gap-2 font-mono text-[12px]"
                 style={{ color: "rgba(242,245,239,.78)" }}
               >
-                Já é cliente? Acessar Portal
+                Já é cliente? Acessar PORTAL
               </a>
 
               <a
@@ -843,7 +843,7 @@ function Footer() {
 
             <div className="mt-4 space-y-3">
               <a href={LINKS.portal} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
-                Portal <ExternalLink size={12} />
+                Portal NOOON
               </a>
               <a href={LINKS.supersocio} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
                 SuperSócio
