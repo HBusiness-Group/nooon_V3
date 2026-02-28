@@ -136,7 +136,7 @@ function Topbar() {
             color: TOKENS.palette.ink,
           }}
         >
-          Portal <ExternalLink size={14} />
+          Portal NOOON
         </a>
       </div>
     </div>
@@ -266,7 +266,7 @@ function Footer() {
                 Voltar para Home
               </MagneticButton>
               <MagneticButton href={LINKS.portal} tone="primary" target="_blank" rel="noreferrer" className="text-xs md:text-sm">
-                Acessar Portal
+                Acessar Portal NOOON
               </MagneticButton>
             </div>
           </div>
@@ -368,7 +368,7 @@ function EquipamentosApp() {
                 className="mag hidden items-center gap-2 text-sm font-semibold md:inline-flex"
                 style={{ color: TOKENS.palette.primary }}
               >
-                Ver portal <ExternalLink size={16} />
+                Ver portal NOOON
               </a>
             </div>
 
