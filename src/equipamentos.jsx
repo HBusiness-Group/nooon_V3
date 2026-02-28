@@ -41,7 +41,9 @@ function MagneticButton({ children, className, href, tone = "neon", ...props }) 
       ? TOKENS.palette.neon
       : tone === "primary"
         ? TOKENS.palette.primary
-        : "rgba(242,245,239,.10)";
+        : tone === "soft"
+          ? "rgba(14,15,16,.06)"
+          : "rgba(242,245,239,.10)";
 
   const fg =
     tone === "ghost"
@@ -55,7 +57,7 @@ function MagneticButton({ children, className, href, tone = "neon", ...props }) 
       ? "1px solid rgba(242,245,239,.16)"
       : tone === "primary"
         ? "1px solid rgba(255,255,255,.14)"
-        : "1px solid rgba(0,0,0,.10)";
+        : "1px solid rgba(0,0,0,.12)";
 
   return (
     <a
@@ -157,11 +159,11 @@ function Feature({ icon: Icon, title, text }) {
   );
 }
 
-function ModelCard({ tag, title, who, bullets, ctaLabel }) {
+function ModelCard({ tag, title, who, bullets, ctaLabel, imageSrc, plans }) {
   return (
     <div className="round-premium hairline bg-white/70 p-6 md:p-7" style={{ boxShadow: "0 18px 60px rgba(0,0,0,.10)" }}>
       <div className="mb-4 flex items-start justify-between gap-4">
-        <div>
+        <div className="min-w-0">
           <div
             className="inline-flex items-center gap-2 rounded-[999px] px-3 py-2 text-xs font-semibold"
             style={{ background: "rgba(116,204,0,.18)", border: "1px solid rgba(116,204,0,.35)", color: TOKENS.palette.primary }}
@@ -174,7 +176,29 @@ function ModelCard({ tag, title, who, bullets, ctaLabel }) {
           </h2>
           <p className="mt-1 text-sm" style={{ color: "rgba(14,15,16,.70)" }}>{who}</p>
         </div>
+
+        {imageSrc ? (
+          <div className="hidden w-[120px] shrink-0 md:block">
+            <div
+              className="round-premium overflow-hidden"
+              style={{ background: "rgba(242,245,239,.65)", border: "1px solid rgba(0,0,0,.10)" }}
+            >
+              <img src={imageSrc} alt={title} className="h-[120px] w-full object-contain p-3" />
+            </div>
+          </div>
+        ) : null}
       </div>
+
+      {imageSrc ? (
+        <div className="mb-4 md:hidden">
+          <div
+            className="round-premium overflow-hidden"
+            style={{ background: "rgba(242,245,239,.65)", border: "1px solid rgba(0,0,0,.10)" }}
+          >
+            <img src={imageSrc} alt={title} className="h-[180px] w-full object-contain p-4" />
+          </div>
+        </div>
+      ) : null}
 
       <ul className="mt-4 space-y-2">
         {bullets.map((b) => (
@@ -185,11 +209,27 @@ function ModelCard({ tag, title, who, bullets, ctaLabel }) {
         ))}
       </ul>
 
+      {plans?.length ? (
+        <div className="mt-6 round-premium p-4"
+          style={{ background: "rgba(46,100,23,.06)", border: "1px solid rgba(46,100,23,.14)" }}>
+          <div className="text-xs font-semibold" style={{ color: TOKENS.palette.primary }}>
+            Planos de aquisição
+          </div>
+          <ul className="mt-2 space-y-1 text-sm" style={{ color: "rgba(14,15,16,.74)" }}>
+            {plans.map((p) => (
+              <li key={p} className="leading-relaxed">
+                {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <MagneticButton href={LINKS.whatsappEquip(title)} tone="neon" className="w-full sm:w-auto">
           {ctaLabel}
         </MagneticButton>
-        <MagneticButton href={LINKS.whatsapp} tone="ghost" className="w-full sm:w-auto">
+        <MagneticButton href={LINKS.whatsapp} tone="soft" className="w-full sm:w-auto">
           Falar no WhatsApp
         </MagneticButton>
       </div>
@@ -317,7 +357,7 @@ function EquipamentosApp() {
                   Modelos recomendados
                 </h2>
                 <p className="mt-1 text-sm" style={{ color: "rgba(14,15,16,.66)" }}>
-                  Três perfis para facilitar sua decisão — compacto, smart e premium.
+                  Dois modelos para facilitar sua decisão — compacto e smart.
                 </p>
               </div>
 
@@ -332,48 +372,85 @@ function EquipamentosApp() {
               </a>
             </div>
 
-            <div className="grid gap-5 md:grid-cols-3">
-              <ModelCard
-                tag="Compacto"
-                title="NOOON S920"
-                who="Ideal para balcão, giro rápido e operação enxuta."
-                bullets={[
-                  "Leve e prático para o dia a dia",
-                  "Indicado para comércios de alto volume",
-                  "Configuração rápida + suporte de ativação",
-                  "Integra ao portal NOOON",
-                ]}
-                ctaLabel="Quero o S920"
-              />
+            
+<div className="grid gap-5 md:grid-cols-2">
+  <ModelCard
+    tag="Compacto"
+    title="NOOON S920"
+    who="Ideal para balcão, giro rápido e operação enxuta."
+    imageSrc="assets/maquina_s920.png"
+    bullets={[
+      "Leve e prático para o dia a dia",
+      "Indicado para comércios de alto volume",
+      "Configuração rápida + suporte de ativação",
+      "Integra ao portal NOOON",
+    ]}
+    plans={[
+      "a. R$ 600,00 parcelado em até 6X sem juros",
+      "b. R$ 550,00 no PIX ou em 1X no cartão de crédito",
+      "c. R$ 100,00 ao mês (locação)",
+    ]}
+    ctaLabel="Quero o S920"
+  />
 
-              <ModelCard
-                tag="Smart"
-                title="NOOON A910"
-                who="Tela maior e experiência melhor para atendimento."
-                bullets={[
-                  "Boa ergonomia para atendimento",
-                  "Perfeito para varejo e serviços",
-                  "Interface fluida para operação",
-                  "Integra ao portal NOOON",
-                ]}
-                ctaLabel="Quero o A910"
-              />
-
-              <ModelCard
-                tag="Premium"
-                title="NOOON A960"
-                who="Para operações robustas, equipe maior e rotina intensa."
-                bullets={[
-                  "Mais tela e presença no ponto",
-                  "Indicado para operações com demanda",
-                  "Suporte + acompanhamento",
-                  "Integra ao portal NOOON",
-                ]}
-                ctaLabel="Quero o A960"
-              />
-            </div>
+  <ModelCard
+    tag="Smart"
+    title="NOOON A930"
+    who="Tela maior, ótimo para atendimento e varejo."
+    imageSrc="assets/maquina_a930.png"
+    bullets={[
+      "Boa ergonomia para atendimento",
+      "Perfeito para varejo e serviços",
+      "Interface fluida para operação",
+      "Integra ao portal NOOON",
+    ]}
+    plans={[
+      "a. R$ 700,00 parcelado em até 7X sem juros",
+      "b. R$ 600,00 no PIX ou em 1X no cartão de crédito",
+      "c. R$ 120,00 ao mês (locação)",
+    ]}
+    ctaLabel="Quero o A930"
+  />
+</div>
           </div>
         </section>
+
+
+
+{/* TAXAS */}
+<section className="mt-10 md:mt-14">
+  <div className="mx-auto w-full max-w-[1100px] px-4 md:px-6">
+    <div className="mb-4">
+      <h2 className="font-heading text-2xl font-semibold tracking-tight" style={{ color: TOKENS.palette.ink }}>
+        Taxas
+      </h2>
+      <p className="mt-1 text-sm" style={{ color: "rgba(14,15,16,.66)" }}>
+        Consulte abaixo as taxas por bandeira e modalidade.
+      </p>
+    </div>
+
+    <div
+      className="round-premium overflow-hidden"
+      style={{
+        background: "rgba(255,255,255,.70)",
+        border: "1px solid rgba(0,0,0,.10)",
+        boxShadow: "0 18px 60px rgba(0,0,0,.10)",
+      }}
+    >
+      <div className="p-4 md:p-6">
+        <img
+          src="assets/taxas_nooon.png"
+          alt="Tabela de taxas NOOON"
+          className="h-auto w-full object-contain"
+        />
+      </div>
+    </div>
+
+    <p className="mt-3 text-xs" style={{ color: "rgba(14,15,16,.55)" }}>
+      *As taxas podem variar conforme perfil, segmento e condições comerciais.
+    </p>
+  </div>
+</section>
 
         {/* CTA FINAL */}
         <section className="mt-12 md:mt-16">
