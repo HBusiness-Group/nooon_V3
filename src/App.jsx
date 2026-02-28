@@ -215,7 +215,7 @@ function Navbar() {
               color: solid ? TOKENS.palette.primary : TOKENS.palette.paper,
             }}
           >
-            Equipamentos <ChevronRight size={14} />
+            Equipamentos
           </a>
 
           <MagneticButton
