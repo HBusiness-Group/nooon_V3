@@ -226,7 +226,7 @@ function Navbar() {
             className="px-4 py-2 text-xs md:text-sm md:px-5 md:py-2.5"
             aria-label="Abrir Portal NOOON"
           >
-            Portal
+            Portal <ExternalLink size={12} />
           </MagneticButton>
         </div>
       </div>
@@ -346,7 +346,7 @@ function Hero() {
                   color: "rgba(242,245,239,.88)",
                 }}
               >
-                Portal NOOON <ExternalLink size={16} />
+                Portal <ExternalLink size={12} />
               </a>
             </div>
 
@@ -843,7 +843,7 @@ function Footer() {
 
             <div className="mt-4 space-y-3">
               <a href={LINKS.portal} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
-                Portal NOOON
+                Portal <ExternalLink size={12} />
               </a>
               <a href={LINKS.supersocio} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
                 SuperSócio
