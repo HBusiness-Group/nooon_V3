@@ -845,11 +845,11 @@ function Footer() {
               <a href={LINKS.portal} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
                 Portal NOOON
               </a>
+              <a href={LINKS.instagram} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
+                Instagram NOOON
+              </a>
               <a href={LINKS.supersocio} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
                 SuperSócio
-              </a>
-              <a href={LINKS.instagram} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
-                Instagram @nooon.pagamentos
               </a>
               <a href={LINKS.hbusiness} target="_blank" rel="noreferrer" className="mag block text-sm font-medium" style={{ color: "rgba(242,245,239,.82)" }}>
                 HBusiness Group
@@ -884,7 +884,7 @@ function Footer() {
 
         <div className="mt-6 flex flex-col gap-2 text-xs md:flex-row md:items-center md:justify-between" style={{ color: "rgba(242,245,239,.62)" }}>
           <div className="font-mono">© {new Date().getFullYear()} NOOON • Ecossistema Financeiro</div>
-          <div className="font-mono">Desenvolvido por HBusiness Group</div>
+          <div className="font-mono">Propriedade de HBusiness Group</div>
         </div>
       </div>
     </footer>
