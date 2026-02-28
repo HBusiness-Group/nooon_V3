@@ -388,7 +388,7 @@ function EquipamentosApp() {
     plans={[
       "A. R$ 600,00 em até 6X sem juros",
       "B. R$ 550,00 no PIX ou em 1X no cartão",
-      "C. R$ 100,00 ao mês [ locação ]",
+      "C. R$ 100,00 ao mês, LOCAÇÃO",
     ]}
     ctaLabel="Quero o S920"
   />
@@ -407,7 +407,7 @@ function EquipamentosApp() {
     plans={[
       "A. R$ 700,00 em até 7X sem juros",
       "B. R$ 600,00 no PIX ou em 1X no cartão",
-      "C. R$ 120,00 ao mês [ locação ]",
+      "C. R$ 120,00 ao mês, LOCAÇÃO",
     ]}
     ctaLabel="Quero o A930"
   />
